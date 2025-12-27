@@ -13,10 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: ".",
+  description: " ",
+  openGraph: {
+    title: ".", // <--- Use a dot here
+    description: " ",
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
