@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: " ",
+  title: "💦",
   description: " ",
   openGraph: {
-    title: " ", // <--- Use a dot here
+    title: "💦", // <--- Use a dot here
     description: " ",
   },
 };
