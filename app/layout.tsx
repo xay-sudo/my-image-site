@@ -12,7 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 1. Define your actual domain here
 const BASE_URL = "https://my-image-site-wine.vercel.app";
 
 export const metadata: Metadata = {
@@ -22,23 +21,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "💦",
     description: " ",
-    url: BASE_URL, // Fixes the "Missing Property: og:url" warning
+    url: BASE_URL,
     siteName: "My Image Site",
-    images: [
-      {
-        url: "/thumbnail.jpg", // YOU MUST CREATE THIS FILE
-        width: 1200,
-        height: 630,
-        alt: "Preview",
-      },
-    ],
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "💦",
     description: " ",
-    images: ["/thumbnail.jpg"],
   },
 };
 
