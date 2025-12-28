@@ -15,7 +15,7 @@ export const contentType = 'image/png'
 
 export default async function Image() {
   // Ensure this URL is correct and the file exists in your public folder
-  const imageUrl = 'https://my-image-site-wine.vercel.app/image_9c9267.png'
+  const imageUrl = 'https://my-image-site-wine.vercel.app/thumnail.jpg'
 
   return new ImageResponse(
     (
