@@ -13,30 +13,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // 1. Set the Base URL (REQUIRED for social images to work)
+  // Replace this with your actual domain name
+  metadataBase: new URL("https://my-image-site-wine.vercel.app"),
+
   title: "💦",
   description: " ",
-  // This is required to resolve relative image paths (like '/1.jpg') correctly
-  // Replace 'https://your-domain.com' with your actual website URL
-  metadataBase: new URL("https://your-domain.com"),
+
   openGraph: {
     title: "💦",
     description: " ",
-    type: "website",
+    // 2. Force the specific horizontal image
     images: [
       {
-        url: "/1.jpg", // The image you want to show
-        width: 1200,   // Critical: Tells FB this is a large image
-        height: 630,   // Critical: Tells FB this is a large image
+        url: "/thumbnail.jpg", // Ensure this file is in your public folder
+        width: 1200,           // Forces FB to show full width
+        height: 630,           // Forces FB to show full width
         alt: "Preview",
       },
     ],
+    type: "website",
   },
-  // Adding Twitter card metadata ensures large images on X/Twitter as well
+
+  // 3. Ensure Twitter/X also shows the big card
   twitter: {
     card: "summary_large_image",
     title: "💦",
     description: " ",
-    images: ["/1.jpg"], // Same image
+    images: ["/thumbnail.jpg"],
   },
 };
 
