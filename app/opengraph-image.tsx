@@ -1,6 +1,11 @@
 import { ImageResponse } from 'next/og'
 
-// Force Square Size
+// 1. You MUST export an alt text for accessibility/TypeScript
+export const alt = 'Website Preview'
+
+// 2. Explicitly set the runtime to edge (often fixes build issues)
+export const runtime = 'edge'
+
 export const size = {
   width: 1080,
   height: 1080,
@@ -9,7 +14,7 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-  // Your specific image URL
+  // Ensure this URL is correct and the file exists in your public folder
   const imageUrl = 'https://my-image-site-wine.vercel.app/image_9c9267.png'
 
   return new ImageResponse(
@@ -29,7 +34,7 @@ export default async function Image() {
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover', // Ensures the image fills the 1080x1080 square
+            objectFit: 'cover',
           }}
         />
       </div>

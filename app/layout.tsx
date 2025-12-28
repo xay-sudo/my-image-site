@@ -12,7 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Define your domain
 const BASE_URL = "https://my-image-site-wine.vercel.app";
 
 export const metadata: Metadata = {
@@ -25,11 +24,9 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "My Image Site",
     type: "website",
-    // Next.js automatically detects opengraph-image.tsx
-    // No need to manually list 'images' here
   },
   twitter: {
-    card: "summary", // 'summary' is better for square images
+    card: "summary",
     title: "💦",
     description: " ",
   },
