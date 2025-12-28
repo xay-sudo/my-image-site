@@ -12,30 +12,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  // 1. Set the Base URL (REQUIRED for social images to work)
-  // Replace this with your actual domain name
-  metadataBase: new URL("https://my-image-site-wine.vercel.app"),
+// 1. Define your actual domain here
+const BASE_URL = "https://my-image-site-wine.vercel.app";
 
+export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: "💦",
   description: " ",
-
   openGraph: {
     title: "💦",
     description: " ",
-    // 2. Force the specific horizontal image
+    url: BASE_URL, // Fixes the "Missing Property: og:url" warning
+    siteName: "My Image Site",
     images: [
       {
-        url: "/thumbnail.jpg", // Ensure this file is in your public folder
-        width: 1200,           // Forces FB to show full width
-        height: 630,           // Forces FB to show full width
+        url: "/thumbnail.jpg", // YOU MUST CREATE THIS FILE
+        width: 1200,
+        height: 630,
         alt: "Preview",
       },
     ],
     type: "website",
   },
-
-  // 3. Ensure Twitter/X also shows the big card
   twitter: {
     card: "summary_large_image",
     title: "💦",
