@@ -12,33 +12,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 1. Define your actual domain here
+// 1. Define your domain strictly here
 const BASE_URL = "https://my-image-site-wine.vercel.app";
 
 export const metadata: Metadata = {
+  // This is the most important line for Facebook images to work
   metadataBase: new URL(BASE_URL),
+  
   title: "💦",
   description: " ",
+
   openGraph: {
     title: "💦",
     description: " ",
-    url: BASE_URL, // Fixes the "Missing Property: og:url" warning
+    url: BASE_URL,
     siteName: "My Image Site",
-    images: [
-      {
-        url: "/thumbnail.jpg", // YOU MUST CREATE THIS FILE
-        width: 1200,
-        height: 630,
-        alt: "Preview",
-      },
-    ],
     type: "website",
+    // We do NOT list 'images' here. 
+    // Next.js will automatically find your 'opengraph-image.tsx' 
+    // and insert the correct 1200x630 link.
   },
+
   twitter: {
     card: "summary_large_image",
     title: "💦",
     description: " ",
-    images: ["/thumbnail.jpg"],
+    // Twitter will also automatically pick up the opengraph-image.tsx
   },
 };
 
