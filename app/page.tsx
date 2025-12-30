@@ -73,7 +73,7 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         keepalive: true,
         body: JSON.stringify({
-          tracker_id: '490415',
+          tracker_id: '303019',
           url: window.location.href,
           referrer: document.referrer
         })
